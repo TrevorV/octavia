@@ -11,3 +11,44 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+
+
+class AmphoraAPIDriver(object):
+    def get_topology(self):
+        pass
+
+    def set_topology(self):
+        pass
+
+    def get_info(self):
+        pass
+
+    def get_details(self):
+        pass
+
+    def get_all_listeners(self):
+        pass
+
+    def get_listener_status(self, listener_id):
+        pass
+
+    def start_listener(self, listener_id):
+        pass
+
+    def stop_listener(self, listener_id):
+        pass
+
+    def delete_listener(self, listener_id):
+        pass
+
+    def upload_cert_pem(self, listener_id, pem_filename):
+        pass
+
+    def get_cert_5sum(self, listener_id, pem_filename):
+        pass
+
+    def delete_cert_pem(self, listener_id, pem_filename):
+        pass
+
+    def upload_config(self, listener_id):
+        pass

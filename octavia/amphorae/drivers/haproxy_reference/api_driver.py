@@ -12,43 +12,77 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import requests
+
 
 class AmphoraAPIDriver(object):
     def get_topology(self):
-        pass
+        r = requests.get(url="http://test.octavia.com/topology")
+        return r
 
-    def set_topology(self):
-        pass
+    def set_topology(self, topology):
+        r = requests.put(url="http://test.octavia.com/topology", data=topology)
+        return r
 
     def get_info(self):
-        pass
+        r = requests.get(url="http://test.octavia.com/info")
+        return r
 
     def get_details(self):
-        pass
+        r = requests.get(url="http://test.octavia.com/details")
+        return r
 
     def get_all_listeners(self):
-        pass
+        r = requests.get(url="http://test.octavia.com/listeners")
+        return r
 
     def get_listener_status(self, listener_id):
-        pass
+        url = "http://test.octavia.com/listeners/{listener_id}".format(
+            listener_id=listener_id)
+        r = requests.get(url=url)
+        return r
 
     def start_listener(self, listener_id):
-        pass
+        url = "http://test.octavia.com/listeners/{listener_id}".format(
+            listener_id=listener_id)
+        r = requests.get(url=url)
+        return r
 
     def stop_listener(self, listener_id):
-        pass
+        url = "http://test.octavia.com/listeners/{listener_id}".format(
+            listener_id=listener_id)
+        r = requests.get(url=url)
+        return r
 
     def delete_listener(self, listener_id):
-        pass
+        url = "http://test.octavia.com/listeners/{listener_id}".format(
+            listener_id=listener_id)
+        r = requests.delete(url=url)
+        return r
 
     def upload_cert_pem(self, listener_id, pem_filename):
-        pass
+        url = ("http://test.octavia.com/listeners/{listener_id}",
+               "/certificates/{filename}".format(
+                   listener_id=listener_id, filename=pem_filename))
+        r = requests.put(url=url, data=pem_filename)
+        return r
 
     def get_cert_5sum(self, listener_id, pem_filename):
-        pass
+        url = ("http://test.octavia.com/listeners/{listener_id}",
+               "/certificates/{filename}".format(
+                   listener_id=listener_id, filename=pem_filename))
+        r = requests.get(url=url)
+        return r
 
     def delete_cert_pem(self, listener_id, pem_filename):
-        pass
+        url = ("http://test.octavia.com/listeners/{listener_id}",
+               "/certificates/{filename}".format(
+                   listener_id=listener_id, filename=pem_filename))
+        r = requests.delete(url=url)
+        return r
 
-    def upload_config(self, listener_id):
-        pass
+    def upload_config(self, listener_id, config):
+        url = "http://test.octavia.com/listeners/{listener_id}".format(
+            listener_id=listener_id)
+        r = requests.put(url=url, data=config)
+        return r

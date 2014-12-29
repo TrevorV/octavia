@@ -17,7 +17,8 @@ import octavia.common.data_models as models
 
 class Topology(models.BaseDataModel):
 
-    def __init__(self, hostname, uuid, topology, role, ip, ha_ip):
+    def __init__(self, hostname=None, uuid=None, topology=None, role=None,
+                 ip=None, ha_ip=None):
         self.hostname = hostname
         self.uuid = uuid
         self.topology = topology
@@ -26,11 +27,22 @@ class Topology(models.BaseDataModel):
         self.ha_ip = ha_ip
 
 
+class Info(models.BaseDataModel):
+
+    def __init__(self, hostname=None, uuid=None, version=None,
+                 api_version=None):
+        self.hostname = hostname
+        self.uuid = uuid
+        self.version = version
+        self.api_version = api_version
+
+
 class Details(models.BaseDataModel):
 
-    def __init__(self, hostname, uuid, version, api_version, network_tx,
-                 network_rx, active, haproxy_count, cpu, memory, disk,
-                 load, listeners, packages):
+    def __init__(self, hostname=None, uuid=None, version=None,
+                 api_version=None, network_tx=None, network_rx=None,
+                 active=None, haproxy_count=None, cpu=None, memory=None,
+                 disk=None, load=None, listeners=None, packages=None):
         self.hostname = hostname
         self.uuid = uuid,
         self.version = version
@@ -49,7 +61,7 @@ class Details(models.BaseDataModel):
 
 class CPU(models.BaseDataModel):
 
-    def __init__(self, total, user, system, soft_irq):
+    def __init__(self, total=None, user=None, system=None, soft_irq=None):
         self.total = total
         self.user = user
         self.system = system
@@ -58,8 +70,9 @@ class CPU(models.BaseDataModel):
 
 class Memory(models.BaseDataModel):
 
-    def __init__(self, total, free, available, buffers, cached, swap_used,
-                 shared, slab, committed_as):
+    def __init__(self, total=None, free=None, available=None, buffers=None,
+                 cached=None, swap_used=None, shared=None, slab=None,
+                 committed_as=None):
         self.total = total
         self.free = free
         self.available = available
@@ -73,14 +86,15 @@ class Memory(models.BaseDataModel):
 
 class Disk(models.BaseDataModel):
 
-    def __init__(self, used, available):
+    def __init__(self, used=None, available=None):
         self.used = used
         self.available = available
 
 
 class Listener(models.BaseDataModel):
 
-    def __init__(self, status, uuid, provisioning_status, type):
+    def __init__(self, status=None, uuid=None, provisioning_status=None,
+                 type=None):
         self.status = status
         self.uuid = uuid
         self.provisioning_status = provisioning_status
@@ -89,7 +103,8 @@ class Listener(models.BaseDataModel):
 
 class ListenerStats(models.BaseDataModel):
 
-    def __init__(self, status, uuid, provisioning_status, type, pools):
+    def __init__(self, status=None, uuid=None, provisioning_status=None,
+                 type=None, pools=None):
         self.status = status
         self.uuid = uuid
         self.provisioning_status = provisioning_status
@@ -99,7 +114,7 @@ class ListenerStats(models.BaseDataModel):
 
 class Pool(models.BaseDataModel):
 
-    def __init__(self, uuid, status, members):
+    def __init__(self, uuid=None, status=None, members=None):
         self.uuid = uuid
         self.status = status
         self.members = members or []

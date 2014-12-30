@@ -91,17 +91,7 @@ class Disk(models.BaseDataModel):
         self.available = available
 
 
-class Listener(models.BaseDataModel):
-
-    def __init__(self, status=None, uuid=None, provisioning_status=None,
-                 type=None):
-        self.status = status
-        self.uuid = uuid
-        self.provisioning_status = provisioning_status
-        self.type = type
-
-
-class ListenerStats(models.BaseDataModel):
+class ListenerStatus(models.BaseDataModel):
 
     def __init__(self, status=None, uuid=None, provisioning_status=None,
                  type=None, pools=None):

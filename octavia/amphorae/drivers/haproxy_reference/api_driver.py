@@ -19,6 +19,10 @@ from octavia.amphorae.drivers.haproxy_reference.amphora_api.v1 \
 
 
 class AmphoraAPIDriver(object):
+    def __init__(self, log):
+        super(AmphoraAPIDriver, self).__init__()
+        self.log = log
+
     def get_topology(self):
         r = requests.get(url="http://test.octavia.com/topology")
         if not exc.check_exception(r.status_code):
@@ -43,14 +47,14 @@ class AmphoraAPIDriver(object):
         r = requests.get(url="http://test.octavia.com/listeners")
         if not exc.check_exception(r.status_code):
             listeners = r.json()
-            return [models.Listener.from_dict(l) for l in listeners]
+            return [models.ListenerStatus.from_dict(l) for l in listeners]
 
     def get_listener_status(self, listener_id):
         url = "http://test.octavia.com/listeners/{listener_id}".format(
             listener_id=listener_id)
         r = requests.get(url=url)
         if not exc.check_exception(r.status_code):
-            return models.ListenerStats.from_dict(r.json())
+            return models.ListenerStatus.from_dict(r.json())
 
     def start_listener(self, listener_id):
         url = "http://test.octavia.com/listeners/{listener_id}".format(

@@ -18,17 +18,17 @@ from webob import exc
 
 def check_exception(status_code):
     if status_code is 401:
-        return Unauthorized()
+        raise Unauthorized()
     if status_code is 403:
-        return InvalidRequest()
+        raise InvalidRequest()
     if status_code is 404:
-        return NotFound()
+        raise NotFound()
     if status_code is 409:
-        return Conflict()
+        raise Conflict()
     if status_code is 500:
-        return InternalServerError()
+        raise InternalServerError()
     if status_code is 503:
-        return ServiceUnavailable()
+        raise ServiceUnavailable()
     return status_code
 
 

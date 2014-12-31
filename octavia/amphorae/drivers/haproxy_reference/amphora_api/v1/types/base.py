@@ -57,4 +57,3 @@ class BaseType(wtypes.Base):
                     continue
             ret_dict[attr] = value
         return ret_dict
-

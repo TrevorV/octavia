@@ -56,4 +56,3 @@ class NotImplementedObjectHandler(BaseObjectHandler):
 class BaseHandler(object):
     """Base class for all handlers."""
     topology = NotImplementedObjectHandler()
-

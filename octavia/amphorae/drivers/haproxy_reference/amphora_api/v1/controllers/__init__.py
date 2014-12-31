@@ -12,11 +12,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from amphora_api.v1.controllers import base
+from amphora_api.v1.controllers import topology
 from wsme import types as wtypes
 from wsmeext import pecan as wsme_pecan
 
-from amphora_api.v1.controllers import base
-from amphora_api.v1.controllers import topology
 
 class V1Controller(base.BaseController):
 
@@ -26,4 +26,3 @@ class V1Controller(base.BaseController):
     def get(self):
         # TODO(sbalukoff): Return specific API version information
         return "V1"
-

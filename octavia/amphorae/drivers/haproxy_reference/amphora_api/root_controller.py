@@ -12,11 +12,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from amphora_api.v1 import controllers
 from pecan import rest
 from wsme import types as wtypes
 from wsmeext import pecan as wsme_pecan
-
-from amphora_api.v1 import controllers
 
 
 class RootController(rest.RestController):
@@ -25,7 +24,7 @@ class RootController(rest.RestController):
 
     @wsme_pecan.wsexpose(wtypes.text)
     def get(self):
-        # TODO: once a decision is made on how to do versions, do that
+        # TODO(sbalukoff): once a decision is made on how to do versions, do it
         # here
         return {'versions': [{'status': 'CURRENT',
                               'updated': '2014-12-22T00:00:00Z',

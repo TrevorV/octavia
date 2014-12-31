@@ -12,13 +12,11 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-
-import pecan
+from amphora_api.v1.controllers import base
+from amphora_api.v1.types import topology as topology_types
 from wsme import types as wtypes
 from wsmeext import pecan as wsme_pecan
 
-from amphora_api.v1.controllers import base
-from amphora_api.v1.types import topology as topology_types
 
 class TopologyController(base.BaseController):
 
@@ -28,14 +26,14 @@ class TopologyController(base.BaseController):
 
     @wsme_pecan.wsexpose(topology_types.TopologyResponse, wtypes.text)
     def get(self):
-        """Gets the amphora's topology configuration"""
-        #TODO(sbalukoff): Implement this. :)
+        """Gets the amphora's topology configuration."""
+        # TODO(sbalukoff): Implement this. :)
         return "GET topology"
 
     @wsme_pecan.wsexpose(topology_types.TopologyResponse,
                          body=topology_types.TopologyPOST,
                          status_code=202)
     def post(self, req):
-        """Sets the amphora's topology configuration"""
-        #TODO(sbalukoff): Implement this. :)
+        """Sets the amphora's topology configuration."""
+        # TODO(sbalukoff): Implement this. :)
         return "POST topology"

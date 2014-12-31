@@ -12,10 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import pecan
-
 from amphora_api import config as app_config
 from amphora_api.v1 import hooks
+import pecan
 
 
 def get_pecan_config():

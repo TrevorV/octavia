@@ -21,10 +21,8 @@ really do things like topology changes, network device discover, etc.
 
 from amphora_api.v1.handlers import abstract_handler
 
+
 class SimulatedBackendHandler(abstract_handler.BaseHandler):
-    """
-    Handler that simulates actions that would be done on a
-    real amphora if we were running on one.
-    """
-    #TODO(sbalukoff): Implement this. :)
+    """Simulates running commands on a back-end."""
+    # TODO(sbalukoff): Implement this. :)
     pass

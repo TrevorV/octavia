@@ -12,9 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from amphora_api.v1.handlers.backend_simulator import handler
 from pecan import rest
 
-from amphora_api.v1.handlers.backend_simulator import handler
 
 class BaseController(rest.RestController):
 

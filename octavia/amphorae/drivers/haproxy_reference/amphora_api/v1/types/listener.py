@@ -12,9 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from wsme import types as wtypes
-
 from amphora_api.v1.types import base
+from wsme import types as wtypes
 
 
 class ListenersResponse(base.BaseType):
@@ -25,4 +24,3 @@ class ListenersResponse(base.BaseType):
     role = wtypes.wsattr(wtypes.text)
     ip = wtypes.wsattr(base.IPAddressType())
     ha_ip = wtypes.wsattr(base.IPAddressType())
-
